@@ -16,7 +16,7 @@ def load_model():
     return MobileNetV2(weights="imagenet")
 
 # (1) PLEASE load model to model HERE !
- model = load_model()
+model = load_model()
 
 # 3. upload file to streamlit
 uploaded_file = st.file_uploader("Choose an image...", type=["jpg", "jpeg", "png"])
@@ -43,7 +43,7 @@ if uploaded_file is not None:
 
     # 6. Show the result
     st.subheader("Predictions:")
-    for i, pred in enumerate(top_preds):
+    for i, pred in enumerate(results):
         class_name = pred[1].replace('_', ' ').title() # setting the font format
         confidence = pred[2] * 100
 
